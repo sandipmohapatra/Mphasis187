@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
 <body>
-
 <button onclick="myFunction()">Click here</button>
-
 <p id="demo"></p>
 
 <script>
 var fruits = ["tea", "coffee", "water"];
 document.getElementById("demo").innerHTML = fruits;
 
-function myFunction() {
-  fruits.push("milk");
+function myFunction() 
+{
+var n=prompt("enter the fruit name");
+  fruits.push(n);
   document.getElementById("demo").innerHTML = fruits;
 }
 </script>
-
 </body>
 </html>
