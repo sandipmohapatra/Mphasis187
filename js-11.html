@@ -5,9 +5,16 @@ function person(firstname,lastname,age,eyecolor)
 {
 this.firstname=firstname;
 this.age=age;
+this.lastname=lastname;
+this.eyecolor=eyecolor;
 }
-var per=new person("Sandip","Kumar",40,"blue");
+var firstname=prompt("enter you firstname");
+var lastname=prompt("enter you lastname");
+var age=prompt("enter you age");
+var eyecolor=prompt("enter you eyecolor");
+var per=new person(firstname,lastname,age,eyecolor);
 document.write(per.firstname + " is " + per.age + " years old.");
+document.write(per.lastname + " is " + per.eyecolor + " eye color.");
 </script>
 </body>
 </html>
