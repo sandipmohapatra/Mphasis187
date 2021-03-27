@@ -3,17 +3,18 @@
 <script>
 function person(firstname,lastname,age,eyecolor)
 {
-this.firstname=firstname;
+this.first=firstname;
 this.age=age;
 this.lastname=lastname;
-this.eyecolor=eyecolor;
+this.eyecolor=eyecolor; 
 }
-var firstname=prompt("enter you firstname");
+var first=prompt("enter you firstname");
 var lastname=prompt("enter you lastname");
 var age=prompt("enter you age");
 var eyecolor=prompt("enter you eyecolor");
-var per=new person(firstname,lastname,age,eyecolor);
-document.write(per.firstname + " is " + per.age + " years old.");
+
+var per=new person(first,lastname,age,eyecolor);
+document.write(per.first + " is " + per.age + " years old.");
 document.write(per.lastname + " is " + per.eyecolor + " eye color.");
 </script>
 </body>
