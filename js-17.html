@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="myFunction()">Click here</button>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["tea", "coffee", "water"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+  fruits.push("milk");
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+
+</body>
+</html>
