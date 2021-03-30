@@ -1,0 +1,107 @@
+DTD :- document type definition
+
+<mphasis>
+<employee>
+<empno>101</empno>
+<name>Dileep</name>
+<loc>Hyderabad</loc>
+</employee>
+</mphasis>
+
+XSD :- xml schema definition
+xsd 2 types :- simple,complex
+
+<xsd:schema       
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name=“song">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="title" type="xsd:string"/>
+                <xsd:element name=“category” type="xsd:string"/>
+                <xsd:element name=“artist" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
+
+----------------------------------------------------------------
+DTD
+XML code for simple elements
+<firstname>Anny</firstname>
+<age>19</age>
+<birthdate>1990-05-15</birthdate>
+----------------------------------------------------------------
+XSD code for simple element definitions
+   <xsd:element name=“firstname" type="xsd:string"/>
+<xsd:element name="age" type="xsd:integer"/>
+<xsd:element name=“birthdate" type="xsd:date"/>
+-------------------------------------------------------------------------
+Example: the default value is “ABC Inc":
+<xsd:element name="company" type="xsd:string" default=“ABC Inc"/>
+--------------------------------------------------------------------------
+Elements may have a default value or a fixed value specified whose values are assigned automatically
+default="default value"  (if no other value is specified)
+fixed="value"   (no other value may be specified)
+----------------------------------------------------------------------------------
+A simple element is defined as
+  <xsd:element   name=“aaa"   type=“bbb" />
+aaa is the name of the element
+bbb is the data type of the element 
+xsd:boolean
+xsd:integer    
+xsd:date
+xsd:string
+xsd:decimal		
+xsd:time
+-------------------------------------------------------------------
+All schema definitions contain two types of elements: simple and complex
+
+A “simple” element is one that contains only text 
+Text can be simple data such as numbers, strings, or dates
+Various restrictions may be applied to simple data
+Cannot contain any child elements
+Cannot have attributes
+
+A “complex” element is one that contains child elements
+May contain attributes
+May be empty, or it may contain text
+------------------------------------------------------------------------------
+Example 1
+The following example has an element named "note" that is of a complex type:
+
+<xs:element name="mail">
+  <xs:complexType>
+    <xs:sequence>
+  <xs:element name="to" type="xs:string"/>
+  <xs:element name="from" type="xs:string"/>
+  <xs:element name="heading" type="xs:string"/>
+  <xs:element name="body" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+----------------------------------------------------------------------------------------------
+Example 2
+The following example has a complex type, "fullpersoninfo", that derives from another complex type, "personinfo", by extending the inherited type with three additional elements (address, city and country):
+
+<xs:element name="employee" type="fullpersoninfo"/>
+
+<xs:complexType name="personinfo">
+  <xs:sequence>
+    <xs:element name="firstname" type="xs:string"/>
+    <xs:element name="lastname" type="xs:string"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fullpersoninfo">
+  <xs:complexContent>
+    <xs:extension base="personinfo">
+      <xs:sequence>
+        <xs:element name="address" type="xs:string"/>
+        <xs:element name="city" type="xs:string"/>
+        <xs:element name="country" type="xs:string"/>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+In the example above the "employee" element must contain, in sequence, the following elements: "firstname", "lastname", "address", "city", and "country".
+-------------------------------------------------------------------------------------------------
