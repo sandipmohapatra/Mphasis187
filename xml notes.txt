@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+------------------------------------------------------------
+
 DTD :- document type definition
 
 <mphasis>
@@ -105,3 +108,13 @@ The following example has a complex type, "fullpersoninfo", that derives from an
 </xs:complexType>
 In the example above the "employee" element must contain, in sequence, the following elements: "firstname", "lastname", "address", "city", and "country".
 -------------------------------------------------------------------------------------------------
+<?xml version="1.0"?>
+<HealthCard>
+    <PatientName pid="212">Sanjay</PatientName>
+    <date>12/01/2019</date>
+    <BP>125/82</BP>
+    <TempRead1 scale="C" time="1130">102</TempRead1>
+    <TempRead2 scale="C" time="1530">100</TempRead2>
+    <TempRead3 scale="C" time="1930">98.4</TempRead3>
+    </HealthCard>
+-----------------------------------------------------------------------------------------------------------
