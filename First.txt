@@ -1,0 +1,143 @@
+Java
+------------
+1)Java support Object oriented program.
+2)Java is a high level language.It is portable.It is case sensitive.
+3)Java is simpler than c and c++ as we don't have pointer concept.
+4)In java we have constructor but no destructor.there is Automatic garbage
+clearance.
+5)With java we can develop standalone application,web application,
+network application and mobile application.
+6)Java is platform independent.we can run java on any operating system.
+7)we have to save the java program with .java extention .after compilation .class
+file is created.
+-------------------------------------------------------
+Data types
+------------------
+1)primary datatype
+a) byte -1 byte 
+b)short - 2 bytes
+c)int - 4 bytes
+d)long - 8 bytes
+e)float - 4 bytes
+f)double - 8 bytes
+g)boolen -1 bit
+h)char - 2 bytes
+------------------------------------
+2)secondary datatype
+a)String
+b)array
+--------------------------------------------------------------------------------
+Operator
+-------------
+1)Unary
+i)i++,i--,--i,++i
+2)Binary
+i)Arithmatic :- +,-,*,/,%
+ii)Comparative :- <,>,<=,>=,==,!=
+iii)assignment :- =,!=
+iv)bitwise :- <<,>>,nor
+v)logical :-&&,|| 
+3)Ternary
+i)?,:
+---------------------------------------------------------------------
+In java all data types are also classes.They are known as wrapper classes. 
+----------------------
+1)byte - Byte
+2)short - Short
+3)int - Integer
+4)long - Long
+5)float - Float
+6)double - Double
+7)char - Character
+8)String
+
+The wrapper classes belong to lang package.
+--------------------------------------------------------------------------------------
+javap java.lang.Integer
+---------------------------------
+In Hirarchy first package ---->class ---->methods
+---------------------------------------------------------------------------
+Access specifier(Access permission)
+-----------------------------
+we can declare a variable as private,public,protected,default.
+----------------------------------------------------------------------------------
+private int a;
+----------------------------------
+1)private :- if we declare a variable as private we can access it within the class only.
+2)public :-if we declare a variable as public we can access it within the class ,out the class,out side the package also.
+3)protected:- if we declare a variable as protected we can access it within the class and within a child class.
+4)default:- if we declare a variable as default we can access it within the class ,out the class,but not out side the package.
+----------------------------------------------------------------
+class and object
+=======================
+A class is a collection of variables and methods.
+A class is also called as object factory.
+----------
+an object is a reference pointer to the class.
+we can access variables and methods of a class using object
+---------------------------------------------------------
+
+example1:-
+-------------------
+package com.Mphasis;
+import java.util.*;
+public class First 
+{
+int rollno;
+String name,address;
+void getData()
+{
+	Scanner x=new Scanner(System.in);
+	System.out.println("enter rollno,name,address");
+	rollno=x.nextInt();
+	name=x.next();
+	address=x.next();
+}
+void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	}
+public static void main(String[] args) 
+{
+First ayush=new First();
+ayush.getData();
+System.out.println(ayush.address);
+ayush.display();
+}
+}
+
+
+--------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
