@@ -252,7 +252,109 @@ public static void main(String[] args)
 }
 }
 -------------------------------------------
+wap to create a parent class and 2 child classes.
 
+parent class is student :- name,address
+
+child class is PCMmarks:-phy,chem,maths,total
+
+child class is CBZmarks:-chem,bot,zol,total
+ ------------------------------------------------------------------
+example-3
+------------------------
+package com.mphasis3rdApril;
+import java.util.*;
+public class Student 
+{
+int rollno;
+String name,address;
+void getdata()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno,name,address");
+	rollno=ob.nextInt();
+	name=ob.next();
+	address=ob.next();
+}
+void display()
+{
+	System.out.println("rollno is "+rollno +" name is "+name+" address is "+address);
+}
+}
+------------------------------------
+package com.mphasis3rdApril;
+
+import java.util.Scanner;
+
+public class PCMmarks extends Student{
+	int phy,chem,math,total;
+	void getdata()
+	{
+		super.getdata();
+		Scanner ob=new Scanner(System.in);
+		System.out.println("enter phy,chem,math");
+		phy=ob.nextInt();
+		chem=ob.nextInt();
+		math=ob.nextInt();
+		total =phy+chem+math;
+	}
+	void display()
+	{
+		super.display();
+		System.out.println("Phy marks is "+phy +" Chem marks is "+chem+" math is "+math);
+		System.out.println("total is "+total);
+	}
+	}
+
+
+--------------------------------------------
+package com.mphasis3rdApril;
+
+import java.util.Scanner;
+
+public class CBZmarks extends Student
+{
+	int che,bio,zol,total;
+	void getdata()
+	{
+		super.getdata();
+		Scanner ob=new Scanner(System.in);
+		System.out.println("enter chem,bio,zol");
+		che=ob.nextInt();
+		bio=ob.nextInt();
+		zol=ob.nextInt();
+		total =che+bio+zol;
+	}
+	void display()
+	{
+		super.display();
+		System.out.println("Chem marks is "+che +" Bio marks is "+bio+" Zol is "+zol);
+		System.out.println("total is "+total);
+	}
+}
+--------------------------------------------
+package com.mphasis3rdApril;
+import java.util.*;
+public class Result 
+{
+public static void main(String[] args)
+{
+Scanner ob=new Scanner(System.in);
+System.out.println("which stream details want to enter(PCM /CBZ)");
+String stream=ob.next();
+if(stream.equals("PCM"))
+{
+	PCMmarks obj=new PCMmarks();
+	obj.getdata();obj.display();
+}
+else
+{
+	CBZmarks obj=new CBZmarks();
+	obj.getdata();obj.display();
+}
+}
+}
+--------------------------------------------------
 
 
 
