@@ -112,11 +112,80 @@ ayush.display();
 --------------------------------------------------------------------------------------
 
 
+wap to enter details of a employee and display it.
 
+empno
+name
+address
+salary
+designation
+using class and object
+-------------------------------------------------------------------------
+(is-a relationship)Inheritance :- Java support single inheritance.It is use to reuse the existing code.
+i)single inheritance
+ii)multi-level inheritance
+iii)Hirarchal inheritance
+---------------
+java does not support multiple inheritance and hybrid inheritance.(combination of diff types of inheritance)
+we use the keyword super and extends.
+super is used to  inherite parent class variables and methods into the child class.
+extends is used to inherite parent class into the child class.
 
-
-
-
+we create object for the child class.
+----------------------------------------------------
+*For multiple inheritance we use Interface.
+-----------------------------------------------------------------------------------
+example-1
+--------------------
+package com.mphasis3rdApril;
+import java.util.*;
+public class Employeedetails
+{
+int empid;
+String name,address;
+void getData()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter empid,name,address");
+	empid=ob.nextInt();
+	name=ob.next();
+	address=ob.next();
+	}
+void display()
+{
+	System.out.println("the empid is "+empid);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	}
+}
+---------------------------------------------------------
+package com.mphasis3rdApril;
+import java.util.Scanner;
+public class employeepersonal extends Employeedetails //to extend the parent class
+{
+	String phoneno,email;
+	void getData1() //void means there will be no return
+	{
+		super.getData();//inherite the super class method
+		Scanner ob=new Scanner(System.in);
+System.out.println("enter phoneno and email");
+phoneno=ob.next();
+email=ob.next();
+	}
+void display1()
+{
+	super.display();//inherite the super class method
+	System.out.println("the phone no is "+phoneno);
+	System.out.println("the email is "+email);
+	}
+public static void main(String[] args) 
+{
+	employeepersonal obj=new employeepersonal();//class,object ,new to create memory block,constructor
+	obj.getData1();
+	obj.display1();
+}
+}
+---------------------------------------------------------------
 
 
 
