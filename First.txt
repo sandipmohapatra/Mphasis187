@@ -355,6 +355,69 @@ else
 }
 }
 --------------------------------------------------
+assignment
+
+create a bank class
+accno,name,phone no,balance
+create deposite class
+accno,deposite amt,total amount
+create withdraw class
+accno,withdraw amt,total amount
+minimum balance =500
+------------------------------------------------------------------
+Constructor:-  
+1)A constructor is a function which has the same name as the class name.
+2)It does not return any value nor it has any return type.
+3)There are 2 types of constructor 
+i)default constructor without any parameter.
+ii)parameterized constructor with parameter.
+4)A constructor execute first when a object is created for a class.
+5)custructor are used to assign values.
+--------------------------------------------------------------------------------
+package com.mphasis3rdApril;
+
+public class ConstructorExample 
+{
+	ConstructorExample()
+	{
+		System.out.println("default constructor");
+	}
+	ConstructorExample(int a,int b)
+	{
+		System.out.println("the sum is "+(a+b));
+	}
+	int sum(int a,int b)//funaction can have any name 
+	{
+		return a+b;
+	}
+	public static void main(String[] args) {
+		    ConstructorExample obj=new ConstructorExample();
+		    ConstructorExample obj1=new ConstructorExample(6,7);
+		    //to call a method we can use any of the object
+		    System.out.println("the sum is "+obj.sum(9,10));
+	}
+}
+-------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
