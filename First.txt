@@ -186,9 +186,72 @@ public static void main(String[] args)
 }
 }
 ---------------------------------------------------------------
+wap to take 2 classes
 
+persondetails
+name,address,phoneno
 
+bankdetails extends persondetails
+accno,balance
 
+and display the full details.
+--------------------------------------------------------------- 
+example-2
+------------------
+package com.mphasis3rdApril;
+import java.util.*;
+class Employeedetails
+{
+String empid;
+String name,address;
+void getData()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter empid,name,address");
+	empid=ob.nextLine();
+	name=ob.nextLine();
+	address=ob.nextLine();
+	}
+void display()
+{
+	System.out.println("the empid is "+empid);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	}
+}
+
+public class employeepersonal extends Employeedetails //to extend the parent class
+{
+	String phoneno,email;
+	void getData1() //void means there will be no return
+	{
+		getData();//inherite the super class method
+		Scanner ob=new Scanner(System.in);
+System.out.println("enter phoneno and email");
+phoneno=ob.next();
+email=ob.next();
+	}
+void display1()
+{
+	display();//inherite the super class method
+	System.out.println("the phone no is "+phoneno);
+	System.out.println("the email is "+email);
+	}
+public static void main(String[] args) 
+{
+	employeepersonal[] obj=new employeepersonal[2];//class,object ,new to create memory block,constructor
+	for(int i=0;i<2;i++)
+	{
+	obj[i]=new employeepersonal();	//indivisually memory blocks are created
+	obj[i].getData1();
+	}
+	for(int i=0;i<2;i++)
+	{
+	obj[i].display1();
+	}
+}
+}
+-------------------------------------------
 
 
 
