@@ -727,6 +727,87 @@ System.out.println("the  address is "+obj.getAddress());
 }
 }
 ----------------------------------------------------------------------
+wap to display person has a bank account
+person(name,address,bank)
+Bank(accno,balance)
+display the details
+---------------------------------------
+Abstract :- 
+we can declare a class as abstract.
+we can declare a method as abstract.
+An abstract class is a class which is incomplete.we cannot create object of an abstract class.
+An abstract class contains abstracts methods as well as concrete methods.
+we have to inherit the abstract class into a class override the abstract methods and 
+create object for the child class.
+
+--------------------------------------------------------------------
+example-1
+-----------------
+package com.Mphasis;
+abstract class bank
+{
+	abstract void getPersonData();
+	abstract void applyLoan();
+	abstract void applycard();
+	void displayName() //concrete method
+	{
+		System.out.println("ICICI BANK");
+	}
+}
+public class Details extends bank
+{
+
+	@Override
+	void getPersonData() 
+	{
+		System.out.println("getPersonData");
+	}
+
+	@Override
+	void applyLoan() {
+		System.out.println("apply loan");
+		
+	}
+
+	@Override
+	void applycard() {
+	System.out.println("apply card");	
+		
+	}
+
+	public static void main(String[] args) {
+		Details ob=new Details();
+		ob.displayName();
+		ob.applycard();
+		ob.applyLoan();
+		ob.getPersonData();
+	}
+	
+}
+--------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
