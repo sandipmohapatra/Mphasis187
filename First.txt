@@ -519,8 +519,108 @@ public static void main(String[] args) {
 }
 }
 --------------------------------------------------------------
+example-2
+package com.mphasis3rdApril;
 
+public class EncapsulationEx 
+{
+private int empno;
+private String name,address;
+public int getEmpno() {
+	return empno;
+}
+public void setEmpno(int empno) {
+	this.empno = empno;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getAddress() {
+	return address;
+}
+public void setAddress(String address) {
+	this.address = address;
+}
+ EncapsulationEx(int empno, String name, String address) {
+	this.empno = empno;
+	this.name = name;
+	this.address = address;
+	System.out.println("the empno is "+empno+" the name is "+name+"  the address is "+address);
+}}
+--------------------------------------------------------
+package com.mphasis3rdApril;
 
+public class Test 
+{
+public static void main(String[] args) {
+	EncapsulationEx ob=new EncapsulationEx(102,"sandip","Banglore");
+	ob.setEmpno(101);
+	ob.setName("Anil");
+	ob.setAddress("Hydrabad");
+	System.out.println("the empno is "+ob.getEmpno());
+	System.out.println("the name is "+ob.getName());
+	System.out.println("the address is "+ob.getAddress());
+}
+}
+-------------------------------------------------------------------------------------------
+example-3
+----------------------
+package com.mphasis3rdApril;
+
+public class EncapsulationEx 
+{
+private int empno;
+private String name,address;
+public int getEmpno() {
+	return empno;
+}
+public void setEmpno(int empno) {
+	this.empno = empno;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getAddress() {
+	return address;
+}
+public void setAddress(String address) {
+	this.address = address;
+}
+ EncapsulationEx(int empno, String name, String address) {
+	this.empno = empno;
+	this.name = name;
+	this.address = address;
+	System.out.println("the empno is "+empno+" the name is "+name+"  the address is "+address);
+}
+public String toString() //This will convert object to string  
+{
+	return "EncapsulationEx [empno=" + empno + ", name=" + name + ", address=" + address + "]";
+}
+}
+------------------------------------------------------------------------
+package com.mphasis3rdApril;
+
+public class Test 
+{
+public static void main(String[] args) {
+	EncapsulationEx ob=new EncapsulationEx(102,"sandip","Banglore");
+	System.out.println(ob);
+	ob.setEmpno(101);
+	ob.setName("Anil");
+	ob.setAddress("Hydrabad");
+	System.out.println("the empno is "+ob.getEmpno());
+	System.out.println("the name is "+ob.getName());
+	System.out.println("the address is "+ob.getAddress());
+	System.out.println(ob);
+}
+}
+-------------------------------------------------------------
 
 
 
