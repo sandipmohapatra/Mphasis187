@@ -373,6 +373,8 @@ i)default constructor without any parameter.
 ii)parameterized constructor with parameter.
 4)A constructor execute first when a object is created for a class.
 5)custructor are used to assign values.
+6)A constructor execute automatically when an object is created for the class.
+we call a function but constructors are automatically called when object is created of the class.
 --------------------------------------------------------------------------------
 package com.mphasis3rdApril;
 
@@ -452,13 +454,71 @@ String design;
 	}
 }
 ------------------------------------------------
+create a super class students (rollno,name,section)
+create a child class marks(phy,chem,maths,total)
+display the result .it should be dynamic.using constructor.
+---------------------------------------------------------------------------------
+inheritance
+------------------------------
+Encapsulation :-
+It is also known as data hiding.we can make the variables as private so that other class 
+will not be able to access them.This is to protect the data.
+It is the process of wrapping code and data together into a single unit.
 
+example student :-
+data :- private rollno,name,address
+code :- getdata(),setdata();
+we can make accessable by using it within the public methods.
+--------------------------------------------------
+abstraction:- to hide the complexcity and show the simplecity.
+example :- switch on the fan.
+------------------------------------
+polymerphisim:- 
+function overloading(compile time)
+function over riding(run time )
+-----------------------------------------------------------
+example-1
+package com.mphasis3rdApril;
 
+public class EncapsulationEx 
+{
+private int empno;
+private String name,address;
+public int getEmpno() {
+	return empno;
+}
+public void setEmpno(int empno) {
+	this.empno = empno;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getAddress() {
+	return address;
+}
+public void setAddress(String address) {
+	this.address = address;
+}
+}
+---------------------------------------------------
+package com.mphasis3rdApril;
 
-
-
-
-
+public class Test 
+{
+public static void main(String[] args) {
+	EncapsulationEx ob=new EncapsulationEx();
+	ob.setEmpno(101);
+	ob.setName("Anil");
+	ob.setAddress("Hydrabad");
+	System.out.println("the empno is "+ob.getEmpno());
+	System.out.println("the name is "+ob.getName());
+	System.out.println("the address is "+ob.getAddress());
+}
+}
+--------------------------------------------------------------
 
 
 
