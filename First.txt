@@ -622,11 +622,111 @@ public static void main(String[] args) {
 }
 -------------------------------------------------------------
 
+wap to enter data of a library and display it.
 
+issueDate,name,author,price.
+i)use getter,setter to set and get data
+ii)use contructor to set and get data
+iii)use toString() to print the object
+----------------------------------------------------------------
 
+is-a relationship (Inheritance)
+-------------------------------------------------------
+has-a relationship (agregation)
+example:- house has a kitchen
+employee has an address.
+---------------------------------------------------------------
+Example 1
+------------------
+package com.Mphasis;
+public class Employee
+{
+private int empno;
+private String name;
+private Address address;
+public int getEmpno() {
+	return empno;
+}
+public void setEmpno(int empno) {
+	this.empno = empno;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public Address getAddress() {
+	return address;
+}
+public void setAddress(Address address) {
+	this.address = address;
+}
+public Employee(int empno, String name, Address address) 
+{
+	super();
+	this.empno = empno;
+	this.name = name;
+	this.address = address;
+}}
+-------------------------------------------------------------------
+package com.Mphasis;
 
+public class Address 
+{
+private int roadno;
+private String Streetname,city,state;
+public int getRoadno() {
+	return roadno;
+}
+public void setRoadno(int roadno) {
+	this.roadno = roadno;
+}
+public String getStreetname() {
+	return Streetname;
+}
+public void setStreetname(String streetname) {
+	Streetname = streetname;
+}
+public String getCity() {
+	return city;
+}
+public void setCity(String city) {
+	this.city = city;
+}
+public String getState() {
+	return state;
+}
+public void setState(String state) {
+	this.state = state;
+}
 
+public String toString() {
+	return "Address [roadno=" + roadno + ", Streetname=" + Streetname + ", city=" + city + ", state=" + state + "]";
+}
+public Address(int roadno, String streetname, String city, String state) {
+	super();
+	this.roadno = roadno;
+	Streetname = streetname;
+	this.city = city;
+	this.state = state;
+}}
+---------------------------------------------------------
+package com.Mphasis;
 
+public class Test 
+{
+public static void main(String[] args) {
+		
+Address ob=new Address(10, "MG Road", "Bangalore", "Karnataka");
+
+Employee obj=new Employee(101, "sandip", ob);
+System.out.println("the employee no is "+obj.getEmpno());
+System.out.println("the name no is "+obj.getName());
+System.out.println("the  address is "+obj.getAddress());
+}
+}
+----------------------------------------------------------------------
 
 
 
