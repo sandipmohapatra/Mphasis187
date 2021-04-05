@@ -398,7 +398,60 @@ public class ConstructorExample
 	}
 }
 -------------------------------------------------------------------------------------
-
+example -5
+-------------------
+package com.mphasis3rdApril;
+import java.util.*;
+class Constexample 
+{
+int empno;//class variable can be accessed through out the class
+String name,address;
+Constexample(int eno,String name,String address)//local variable only for method access
+{
+	empno=eno;//this is a self referencial pointer to distinguish between class variable and local variable.
+	this.name=name;
+	this.address=address;
+}
+void display()
+{
+	System.out.println("the empno is "+empno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	}
+}
+public class Constexample1 extends Constexample
+{
+double salary;
+String design;
+	Constexample1(int eno, String name, String address,double salary,String design) 
+	{
+		super(eno, name, address);//this is first statement to execute first the super class constructor will execute
+		this.salary=salary;
+		this.design=design;
+		
+				}
+	void display()
+	{
+		super.display();
+		System.out.println("the salary is "+salary);
+		System.out.println("the designation is "+design);
+	}
+	public static void main(String[] args) 
+	{
+		Scanner y=new Scanner(System.in);
+		System.out.println("enter empno,name,address,salary,designation");
+		int a=y.nextInt();
+		String b=y.next();
+		String c=y.next();
+		double d=y.nextDouble();
+		String e=y.next();
+		Constexample1 x=new Constexample1(a,b,c,d,e);
+		x.display();
+		//1.constructor has the same name as that of the class name.
+		//2.we have to create object for the child class so the child class constructor will execute.
+	}
+}
+------------------------------------------------
 
 
 
