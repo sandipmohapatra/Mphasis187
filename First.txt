@@ -1100,7 +1100,41 @@ public static void main(String[] args)
 	increment();
 		}}
 ---------------------------------------------------------
-
+Example:3
+public class Example1 {
+    static int a=10;
+    static int b=20;
+   static    int k;
+   Example1()
+   {
+       k++;
+   }
+    static void display()
+    {
+        int c=a+b;//we cannot access non-static variables inside a static method.
+        System.out.println(c);
+        System.out.println("This is display");
+    }
+    static
+    {
+        System.out.println("This is static block this will be executed befrore main !!!!!");
+    }
+    public static void main(String[] args) 
+    {
+        System.out.println(Example1.a);
+        Example1.display();
+        display();
+        System.out.println(a);
+        
+         Example1 e=new  Example1();
+         System.out.println(k);
+         Example1 e1=new  Example1();
+         Example1 e2=new  Example1();
+         System.out.println("the number of object created  is " +k);
+        
+        }
+    }
+-------------------------------------------------------
 
 
 
