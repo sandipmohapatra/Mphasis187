@@ -1203,14 +1203,56 @@ a constructor cannot be final or static
 a constructor can be private.no object will be created.
 in case of final the  constructor cannot be modified.
 -------------------------------------------------------------------------------------
-String class
+Exception Handling
 ---------------------------
-
-
-
-
-
-
+There are 3 types of error
+1)logical error
+2)compile time error
+3)runtime error
+In exception handling we are going to handle only runtime error.
+we have to manually rectify the logical and compile time error.
+---------------------------------------------------------------------------------------------------------------
+we have 5 keywords 1)try,2)catch,3)finally 4)throws 5)throw
+---------------------------------------------------------------------------------------------
+The main purpose of exception handling is to handle the error and the control should flow till the end of the program.
+It should not terminate in between.
+----------------------------------------------------------------------------------------------
+The super class of exception is Throwable.
+There are 2 types of exceptions
+1)checked exception
+i)SQLException
+ii)IOException
+iii)InterruptedException
+2)unchecked exception
+i)Divide-by-zero error
+ii)ArrayIndexOutofBound 
+iii)InputMisMach
+----------------------------------------------------
+example 1
+--------------------
+package com.exception;
+import java.util.*;
+public class Example1
+{
+public static void main(String[] args) 
+{
+	try
+	{
+Scanner ob=new Scanner(System.in);
+System.out.println("enter 2 nos");
+int a=ob.nextInt();
+int b=ob.nextInt();
+int c=a/b;
+System.out.println("The result is "+c);
+	}
+	catch(Exception ae)
+	{
+		System.out.println("the error is "+ae);
+	}
+System.out.println("This is a important line");
+}
+}
+--------------------------------------------------------
 
 
 
