@@ -739,7 +739,7 @@ An abstract class is a class which is incomplete.we cannot create object of an a
 An abstract class contains abstracts methods as well as concrete methods.
 we have to inherit the abstract class into a class override the abstract methods and 
 create object for the child class.
-
+we can have default constructor for abstract class.
 --------------------------------------------------------------------
 example-1
 -----------------
@@ -835,9 +835,71 @@ class Abstractex2 extends DBCrud
 	}
 }
 -------------------------------------------------------------------
+Interface :-
+we can declare a class as interface.
+It only contains abstract methods.
+An Interface is incomplete class.we cannot create object of an interface.
+By interface we can perform multiple Inheritance .
+java doesnot support multiple Inheritance but by interface we can perform multiple inheritance.
+we have to implement an interface into a child class and create object of the child class.
+-------------------------------------
+package com.Mphasis;
 
+interface Interface1 
+{
+void connection();
+}
+interface Interface2
+{
+	void createTable();
+}
+interface Interface3
+{
+	void Insertdata();
+	void UpdateData();
+	void deleteData();
+}
+class Interfaceex1 implements Interface1,Interface2,Interface3
+{
 
+	@Override
+	public void Insertdata() {
+		
+		System.out.println("Insert data");
+	}
 
+	@Override
+	public void createTable() {
+		
+		System.out.println("create table");
+	}
+
+	@Override
+	public void connection() {
+	
+	System.out.println("create connection");	
+	}
+
+	@Override
+	public void UpdateData() {
+		 
+		System.out.println("update data");		
+	}
+
+	@Override
+	public void deleteData() {
+		 
+		System.out.println("delete data");	
+	}
+	public static void main(String[] args) {
+		Interfaceex1 ob=new Interfaceex1();
+		ob.connection();
+		ob.createTable();
+		ob.deleteData();
+		ob.Insertdata();
+		ob.UpdateData();
+	}
+}
 
 
 
