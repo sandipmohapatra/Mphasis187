@@ -837,7 +837,8 @@ class Abstractex2 extends DBCrud
 -------------------------------------------------------------------
 Interface :-
 we can declare a class as interface.
-It only contains abstract methods.
+It only contains abstract methods.we donot use the keyword abstract.
+while overriding the methods we have to use public access specifier. 
 An Interface is incomplete class.we cannot create object of an interface.
 By interface we can perform multiple Inheritance .
 java doesnot support multiple Inheritance but by interface we can perform multiple inheritance.
@@ -1024,8 +1025,51 @@ class Interfaceex1 implements Interface1,Interface3
 	}
 }
 --------------------------------------------
+wap to create an application for a college.
 
+abstract class College
+{
+abstract getRegistration();
+abstarct getAttendence();
+abstract getExamined();
+abstract getResult();
+}
+class xyz extends College
+{}
+--------------------------------------------------
+convert this into Interface also
+---------------------------------------------------------------------------------------------------
+static keyword
+-------------------------------------------
+1)we can declare a class as static.Variable as static.method as static and we can have static block.
+2)when we declare as static a single copy is send to the JVM.
+3)we can access it without creating an object.
+4)static variables and methods can be called using class name.
+5)we cannot access non-static variables inside a static method.
+---------------------------------------------------
+package com.Mphasis;
+public class Staticex 
+{
+static int a=10;
+static int b=20;
+static void display()
+{
+	int c=a+b;//we cannot access non-static variables inside a static method.
+	System.out.println(c);
+	System.out.println("This is display");
+}
+static
+{
+	System.out.println("This is static block");
+}
+public static void main(String[] args) 
+{
+	System.out.println(Staticex.a);
+	Staticex.display();
+	}
+}
 
+----------------------------------------------------------------------------------------
 
 
 
