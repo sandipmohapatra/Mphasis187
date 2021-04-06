@@ -775,7 +775,8 @@ public class Details extends bank
 		
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+{
 		Details ob=new Details();
 		ob.displayName();
 		ob.applycard();
@@ -785,7 +786,55 @@ public class Details extends bank
 	
 }
 --------------------------------------------------------------------------
+example 2
+----------------
+package com.Mphasis;
 
+abstract class DBCrud
+{
+abstract void createTable();
+abstract void readData();
+abstract void updateData();
+abstract void deleteData();
+void connection() {
+	System.out.println("conection created using username,password");
+}
+}
+class Abstractex2 extends DBCrud
+{
+
+	@Override
+	void createTable() {
+		
+		System.out.println("Table created");
+	}
+
+	@Override
+	void readData() {
+	
+		System.out.println("Data reading from DB");
+	}
+
+	@Override
+	void updateData() {
+		
+		System.out.println("update data");
+	}
+
+	@Override
+	void deleteData() {
+		System.out.println("Delete Data");
+	}
+	public static void main(String[] args) {
+		Abstractex2 ob=new Abstractex2();
+		ob.connection();
+		ob.createTable();
+		ob.readData();
+		ob.updateData();
+		ob.deleteData();
+	}
+}
+-------------------------------------------------------------------
 
 
 
