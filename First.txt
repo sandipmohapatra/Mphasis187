@@ -1135,7 +1135,32 @@ public class Example1 {
         }
     }
 -------------------------------------------------------
+final :- we can declare a class as final,method as final and variable as final.
+if we declare class as final we cannot extend it.
+if we declare method as final we cannot override it.
+if we declare variable as final we have to assign it and it cannot be changed.
+----------------------------------------------------------------
+example-1
+package com.Mphasis;
 
+public final class Finalex 
+{
+final int a=10;
+final void display()
+{
+	System.out.println("this is a final method");
+}
+public static void main(String[] args) {
+	Finalex ob=new Finalex();
+	System.out.println(ob.a);
+ob.display();	
+}
+}
+------------------------------------------------------------------------------------- 
+a constructor cannot be final or static
+a constructor can be private.no object will be created.
+in case of final the  constructor cannot be modified.
+-------------------------------------------------------------------------------------
 
 
 
