@@ -1046,6 +1046,7 @@ static keyword
 3)we can access it without creating an object.
 4)static variables and methods can be called using class name.
 5)we cannot access non-static variables inside a static method.
+6)static variable once incremented remain incremented.
 ---------------------------------------------------
 package com.Mphasis;
 public class Staticex 
@@ -1070,7 +1071,35 @@ public static void main(String[] args)
 }
 
 ----------------------------------------------------------------------------------------
-
+example-2
+package com.Mphasis;
+public class Staticex 
+{
+static int a=10;
+static int b=20;
+static void display()
+{
+	int c=a+b;//we cannot access non-static variables inside a static method.
+	System.out.println(c);
+	System.out.println("This is display");
+}
+static void increment()
+{
+	System.out.println(a++);
+}
+static
+{
+	System.out.println("This is static block");
+}
+public static void main(String[] args) 
+{
+	System.out.println(Staticex.a);
+	Staticex.display();
+	increment();increment();
+	increment();increment();
+	increment();
+		}}
+---------------------------------------------------------
 
 
 
