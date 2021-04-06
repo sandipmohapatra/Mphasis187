@@ -962,7 +962,68 @@ class Interfaceex1 implements Interface1,Interface3
 	}
 }
 ----------------------------------------------
+example-3
+package com.Mphasis;
 
+interface Interface1 
+{
+	public static final int a = 10;//final value cannot be changed
+	//static variable is which a single copy is created by the JVM and we can access it without object
+	void connection();
+}
+interface Interface2
+{
+	void createTable();
+}
+interface Interface3 extends Interface2
+{
+	void Insertdata();
+	void UpdateData();
+	void deleteData();
+}
+class Interfaceex1 implements Interface1,Interface3
+{
+
+	@Override
+	public void Insertdata() {
+		
+		System.out.println("Insert data");
+	}
+
+	@Override
+	public void createTable() {
+		
+		System.out.println("create table");
+	}
+
+	@Override
+	public void connection() {
+	
+	System.out.println("create connection");	
+	}
+
+	@Override
+	public void UpdateData() {
+		 
+		System.out.println("update data");		
+	}
+
+	@Override
+	public void deleteData() {
+		 
+		System.out.println("delete data");	
+	}
+	public static void main(String[] args) {
+		Interfaceex1 ob=new Interfaceex1();
+		System.out.println(a);
+		ob.connection();
+		ob.createTable();
+		ob.deleteData();
+		ob.Insertdata();
+		ob.UpdateData();
+	}
+}
+--------------------------------------------
 
 
 
