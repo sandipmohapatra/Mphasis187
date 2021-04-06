@@ -1156,12 +1156,55 @@ public static void main(String[] args) {
 ob.display();	
 }
 }
+-----------------------------------
+package com.Mphasis;
+
+abstract class DBCrud
+{
+	DBCrud()
+	{		System.out.println("default constructor");	}
+abstract void createTable(int rollno,String name);
+abstract void readData();
+abstract void updateData();
+abstract void deleteData();
+void connection() {
+	System.out.println("conection created using username,password");
+}
+}
+class Abstractex2 extends DBCrud
+{
+
+	
+	  @Override void createTable(int rollno,String name) {
+	  
+	  System.out.println("rollno is "+rollno +"name is "+name); }
+	  
+	  @Override void readData() {
+	  
+	  System.out.println("Data reading from DB"); }
+	  
+	  @Override void updateData() {
+	  
+	  System.out.println("update data"); }
+	  
+	  @Override void deleteData() { System.out.println("Delete Data"); }
+	 
+	public static void main(String[] args) {
+		Abstractex2 ob=new Abstractex2();
+		ob.connection();
+		ob.createTable(1,"sandip");
+		ob.readData();
+		ob.updateData();
+		ob.deleteData();
+	}
+}
 ------------------------------------------------------------------------------------- 
 a constructor cannot be final or static
 a constructor can be private.no object will be created.
 in case of final the  constructor cannot be modified.
 -------------------------------------------------------------------------------------
-
+String class
+---------------------------
 
 
 
