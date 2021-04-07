@@ -1253,8 +1253,46 @@ System.out.println("This is a important line");
 }
 }
 --------------------------------------------------------
-
-
+*if the try is success means there is error.Then the catch is success.The catch will handle the error and allow the control to flow till the end of the program.
+if the try is failed means no error then the catch is also failed.so control will not go into the catch part.
+-----------------------------------------------------------
+try - finally
+------------------
+in this if try is success or not it doesnot matter the finally will definetly execute.
+we do all the closing statement inside the finally block.
+example:- conn.close();file.close();
+----------------------------------------------------------------------------------------------------------------  
+example-2
+------------------------------
+package com.exception;
+import java.util.*;
+public class Example1
+{
+public static void main(String[] args) 
+{
+	try
+	{
+Scanner ob=new Scanner(System.in);
+System.out.println("enter 2 nos");
+int a=ob.nextInt();
+int b=ob.nextInt();
+int c=a/b;
+System.out.println("The result is "+c);
+	}
+	
+	  catch(ArithmeticException x) 
+	{ System.out.println("the error is "+x); }
+	  catch(InputMismatchException x) {
+	  System.out.println("the error message is "+x); }
+	catch(Exception x) {
+		  System.out.println("the error message is "+x); } 
+	finally 
+	{
+System.out.println("This is a important line");
+	}
+}
+}
+------------------------------------------
 
 
 
