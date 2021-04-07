@@ -1293,8 +1293,52 @@ System.out.println("This is a important line");
 }
 }
 ------------------------------------------
+Throws exception is used for checked Exception mostly.
+checked exception is that until you donot handle the exception it will not allow you to run the program.
+it will give compile time error.
+----------------------------------------------------------------------
+example-1
+-----------------
+package com.exception;
+import java.util.*;
+public class Example1
+{
+public static void main(String[] args) throws InterruptedException  
+{
+	for(int i=1;i<=10;i++)
+	{
+		System.out.println(i);
+		Thread.sleep(1000);
+	}
+}
+}
+-----------------------------------------------------------------------------
+example-2
+-------------
+package com.exception;
+import java.util.*;
+public class Example1
+{
+public static void main(String[] args)   
+{
+	try
+	{
+	int a[]=new int[5];
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter 5 nos");
+	for(int i=0;i<5;i++) //entering 5 elements
+a[i]=ob.nextInt();
+	System.out.println(" 5 nos are");
+	for(int i=0;i<=5;i++) //going to display 6 element which is not present.
+System.out.println(a[i]);
 
-
+  } catch(Exception ab) 
+{ ab.printStackTrace(); }
+ 
+System.out.println("this is a important line");	
+}
+}
+----------------------------------------------
 
 
 
