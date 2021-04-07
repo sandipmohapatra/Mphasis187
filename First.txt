@@ -1220,10 +1220,13 @@ It should not terminate in between.
 The super class of exception is Throwable.
 There are 2 types of exceptions
 1)checked exception
+
 i)SQLException
 ii)IOException
 iii)InterruptedException
+
 2)unchecked exception
+
 i)Divide-by-zero error
 ii)ArrayIndexOutofBound 
 iii)InputMisMach
@@ -1296,6 +1299,7 @@ System.out.println("This is a important line");
 Throws exception is used for checked Exception mostly.
 checked exception is that until you donot handle the exception it will not allow you to run the program.
 it will give compile time error.
+This donot have body .It is used with methods.                                                                                                      
 ----------------------------------------------------------------------
 example-1
 -----------------
@@ -1339,7 +1343,31 @@ System.out.println("this is a important line");
 }
 }
 ----------------------------------------------
-
+example-3
+--------------------
+package com.exception;
+import java.util.*;
+public class Unchecked_2 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int sum = 0;
+        try {
+            int a[] = new int[5];
+            Scanner ob = new Scanner(System.in);
+            System.out.println("enter 5 nos");
+            for (int i = 0; i < 5; i++) {// entering 5 elements
+                a[i] = ob.nextInt();
+                sum=sum+a[i];
+                }
+            System.out.println("Enter multiplication value: ");
+            int m=sc.nextInt();
+            sum=sum*m;
+        } catch(InputMismatchException x) {
+              System.out.println("the error message is "+x); }
+               System.out.println("the result is " + sum);
+        }
+}
+--------------------------------------------------------------------
 
 
 
