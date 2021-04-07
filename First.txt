@@ -1415,7 +1415,46 @@ public static void main(String[] args)
 }
 }
 -----------------------------------------
+Example-3
+-------------------
+package com.collection;
 
+public class Employee
+{
+int eno;
+String name,address;
+public Employee(int eno, String name, String address) 
+{
+	this.eno = eno;
+	this.name = name;
+	this.address = address;
+}
+@Override
+public String toString() {
+	return "Employee [eno=" + eno + ", name=" + name + ", address=" + address + "]";
+}
+
+}
+----------------------------------------------------
+package com.collection;
+import java.util.*;
+class C_HS2
+{
+   public static void main(String args[]) 
+{
+  LinkedHashSet hs=new LinkedHashSet();
+   Employee ob1=new Employee(101, "sandip","Bangalore");
+   Employee ob2=new Employee(102, "aveek","Bangalore");
+   Employee ob3=new Employee(103, "anil","Bangalore");
+   Employee ob4=new Employee(104, "ajay","Bangalore");
+  hs.add(ob1);
+  hs.add(ob2);
+  hs.add(ob3);
+  hs.add(ob4);
+  for(Object x:hs)
+	  System.out.println(x);
+}}
+------------------------------------------------
 
 
 
