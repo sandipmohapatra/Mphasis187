@@ -1392,7 +1392,29 @@ public static void main(String[] args) throws Exception
 }
 }
 ----------------------------------------------------------------------------------
-
+Collection Framework
+--------------------------------------
+example-1
+--------------------
+package com.collection;
+import java.util.*;
+public class SetExample1 
+{
+public static void main(String[] args) 
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter a no");
+	int b=ob.nextInt();
+	LinkedHashSet st=new LinkedHashSet();
+	Integer a=80;
+	st.add(b);
+	st.add(a);	st.add(60);st.add(70);
+	st.add(40);	st.add(50);	st.add(30);
+	st.add(10);st.add(10);st.add(10);
+	System.out.println(st);
+}
+}
+-----------------------------------------
 
 
 
