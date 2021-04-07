@@ -1299,7 +1299,8 @@ System.out.println("This is a important line");
 Throws exception is used for checked Exception mostly.
 checked exception is that until you donot handle the exception it will not allow you to run the program.
 it will give compile time error.
-This donot have body .It is used with methods.                                                                                                      
+This donot have body .It is used with methods.   
+so the execution will be faster as compared to try-catch.                                                                                                   
 ----------------------------------------------------------------------
 example-1
 -----------------
@@ -1367,10 +1368,30 @@ public class Unchecked_2 {
                System.out.println("the result is " + sum);
         }
 }
---------------------------------------------------------------------
-
-
-
+---------------------------------------------------------------------------
+Throw exception:- it is used for user defined exception.
+example:- marks should be greater than 0;
+salary should be greater than 15000
+age should be greater than 18 when casting your vote.
+-----------------------------------------------------------------------------
+example-1
+-------------------------
+package com.exception;
+import java.util.*;
+public class ThrowEx
+{
+public static void main(String[] args) throws Exception
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter your age to caste your vote");
+	int age=ob.nextInt();
+	if(age>=18)
+		System.out.println("you can cast your vote");
+	else
+		throw new Exception(" Age should be greater than 18 to cast your vote");
+}
+}
+----------------------------------------------------------------------------------
 
 
 
