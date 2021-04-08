@@ -1778,8 +1778,41 @@ public static void main(String[] args) {
 }    
 }    
 ----------------------------------------------------------------------
-
-
+Assignment
+----------------------
+In a cruise there are 3 types of tickets.
+1)crew member :- free
+2)Adult above 10 years:- Rs 500
+3)Children below 10 years :-Rs 250
+Enter details of all the passengers and count no of crew members ,Adult and children traveling .
+Also display the details of all the travellers.Using HashMap.
+---------------------------------------------------------------------------------------------------------------------
+example-13
+---------------------
+import java.util.*;
+class linklist_listiterator
+{
+   public static void main(String args[])  
+{
+LinkedList ll=new LinkedList();
+ll.add(10);  
+ll.add(40);
+ll.add(20);
+ll.add(80);
+ll.add(90);
+ll.add(50);
+ListIterator ii=ll.listIterator();
+System.out.println("forward direction");
+while(ii.hasNext())
+   {
+     System.out.println(ii.next());
+}
+System.out.println("backward direction");
+while(ii.hasPrevious())
+   {
+     System.out.println(ii.previous());
+}}}
+----------------------------------------
 
 
 
