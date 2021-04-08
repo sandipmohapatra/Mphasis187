@@ -1635,9 +1635,39 @@ public static void main(String[] args) {
 	}
 }
 }
------------------------------------------------------
-
-
+------------------------------------------------------------------------------
+Create a class Bank having accno,name,balance,phoneno
+display the list in sorted order.
+insert the data and search the data according to accno.
+if you enter a accno it should display all information.
+if you want to remove the data . you can insert the accno to remove.
+-----------------------------------------------------------------------------------
+example-8
+------------------
+import java.util.*;
+class hashmap
+{
+   public static void main(String args[]) 
+{
+     Scanner obj=new Scanner(System.in);
+     System.out.println("enter the key and name");
+     int b=obj.nextInt();
+     String st=obj.next();
+     HashMap hs=new HashMap();
+     hs.put(1,"raj");
+     hs.put(2,"seetha");
+     hs.put(3,"reeta");
+     System.out.println(hs);
+     hs.put(4,"meetha");
+     hs.put(5,"venu");
+     hs.put(6,"pankaj");
+     hs.put(7,"raj");
+     hs.put(10,"lakshmi");
+     hs.put(10,"lllll");
+     hs.put(b,st);
+     System.out.println(hs);
+}}
+----------------------------------------------
 
 
 
