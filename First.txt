@@ -1549,6 +1549,72 @@ System.out.println(ss.search(20));//display the index start from 1
 System.out.println(ss.search(200));//display -1 if not there     
 }}
 -------------------------
+Difference between array and collection
+-------------------------------------------------------
+1)array size is fixed and collections the size increase dynamically as we insert the data.
+2)array is collection of primative or non-primative data and also same data type but the collection is the collection of object.
+3)we have 4 interfaces in collection (set,list,map,queue).Collection is like our data-structure where we can insert,search,delete,update data.we have stack,queue,linklist etc.
+----------------------------------------------------------
+example-5
+-----------------
+package com.collection;
+import java.util.*;
+public class ArrayListExample
+{
+public static void main(String[] args) {
+	ArrayList<String> list=new ArrayList<String>();
+	list.add("Mango");
+	list.add("Apple");
+	list.add("Banana");
+	list.add("Grapes");
+	Collections.sort(list);//collection class has static methods like sort to sort the elements .
+	Iterator itr=list.iterator();
+	while(itr.hasNext())//return boolean value
+	{
+		System.out.println(itr.next());//returns the next element in the iteration
+	}
+}
+}
+--------------------------------------------
+example-6
+-----------------
+package com.collection;
+import java.util.*;
+public class ArrayListExample
+{
+public static void main(String[] args) {
+	ArrayList<Integer> list=new ArrayList<Integer>();//generic 
+	list.add(45);
+	list.add(87);
+	list.add(65);
+	list.add(55);
+	Collections.sort(list);//collection class has static methods like sort to sort the elements .
+	Iterator itr=list.iterator();
+	while(itr.hasNext())//return boolean value
+	{
+		System.out.println(itr.next());//returns the next element in the iteration
+	}
+}
+}
+---------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
