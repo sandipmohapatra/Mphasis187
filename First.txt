@@ -1841,7 +1841,20 @@ int x=a;//unboxing
 System.out.println(x);
 }}
 --------------------------------------------------------------------------------------
-
+package com.mphasis3rdApril;
+public class TypeCastEx 
+{
+public static void main(String[] args) {
+	byte a=10; //byte memory size is 1 byte
+	int b=a;//int memory size is 4 bytes so converting byte to int is known as implicit casting JVM will take care
+	System.out.println(b);
+	int c=100;
+	byte d=(byte) c;//explicit casting we have to do manually. (range is -127 to 128)
+	System.out.println(d);
+	
+}
+}
+--------------------------------------------------------------------
 
 
 
