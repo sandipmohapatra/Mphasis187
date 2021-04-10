@@ -2603,7 +2603,29 @@ class InterfaceExample
 
 }
 ---------------------------------------------------------------------
+example-2
+-------------------
+package org.lambda;
 
+@FunctionalInterface
+interface bank 
+{
+	public void withdraw();
+}
+
+class InterfaceExample
+{
+	public static void main(String[] args) 
+	{
+		int x=10;
+				bank ob=()->
+		{//no need to override method
+				System.out.println("this is override method");
+				System.out.println("the value of x is "+x);
+				};
+		ob.withdraw();
+	}}
+------------------------------------------------------------------
 
 
 
