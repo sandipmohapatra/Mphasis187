@@ -2501,6 +2501,7 @@ System.out.println("file copied.....");
 ------------------------------------------
 Serialization :- Serialization is the process of writing the data of an object to a file.
 we can do serialization by implementing Serializable inteface.It is a marker interface.(no abstract methods in it)
+
 transient  :- if we declare the variable as transient it will not be serializable.
 
 -------------------------------------------------
@@ -2574,7 +2575,34 @@ catch(ClassNotFoundException c)
     }
 }
 --------------------------------------------------------
+Lambda function
+------------------------------
+example-1
+------------------
+package org.lambda;
 
+interface bank 
+{	public void withdraw();//abstract method
+}
+class InterfaceExample
+{
+	public static void main(String[] args) 
+	{
+		int x=10;
+		bank ob=new bank()  //functional Interface
+		{
+			@Override
+			public void withdraw() 
+			{
+				System.out.println("this is override method");
+				System.out.println("the value of x is "+x);
+			}
+		};
+		ob.withdraw();
+	}
+
+}
+---------------------------------------------------------------------
 
 
 
