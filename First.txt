@@ -2479,7 +2479,25 @@ fis.close();fos.close();
 System.out.println("file copied.....");
  }}
 ---------------------
-
+example-6
+---------------------
+package org.Files;
+import java.io.*;
+class g
+{   
+public static void main(String args[]) throws Exception
+{
+FileReader fr=new FileReader("test.txt");//read data in character format
+BufferedReader br=new BufferedReader(fr);
+String name;
+while((name=br.readLine())!=null)//null is EOF in character stream
+{
+System.out.print(name);
+}
+fr.close();
+br.close();
+System.out.println("file copied.....");
+}}
 
 
 
