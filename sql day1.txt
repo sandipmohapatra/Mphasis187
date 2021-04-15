@@ -1,4 +1,4 @@
-Sql :- structure query language
+             Sql :- structure query language
 ----------------------------------------------
 Data types:-
 ----------------------
@@ -14,10 +14,48 @@ Data types:-
 -------------------------------------------------
 1)Arithmatic operator:-  
 + , -,*,/
+
+
+select empno,name,salary+1000 as salaryBonus from mphasis183;//temporary 
+
+select empno,name,salary-1000 as salaryReduction from mphasis183;
+
+select empno,name,salary/30 as perDaySalary from mphasis183;
+
+select empno,name,salary*12 as AnualSalary from mphasis183;
 -----------------------------------------------
 2)comparison operator :- =,>=,<= ,>,<,!=(not equal to)
+select * from mphasis183 where salary=23000;
+select * from mphasis183 where salary>=23000;
+select * from mphasis183 where salary<=23000;
+select * from mphasis183 where salary>23000;
+select * from mphasis183 where salary<24000;
+select * from mphasis183 where salary!=23000;
 -----------------------------------------------------------
 3)between and, not between ,in,not in,like 
+
+=>select * from emp where sal between 2000 and 4000;
+					      
+=>select * from emp where deptno in(10,20);
+				                      
+=>
+select name from mphasis183 where salary>=21000 and name like '%p';
+select name from mphasis183 where salary>=21000 and name like 's%';
+select name from mphasis183 where salary>=21000 and name like '%a';
+select name from mphasis183 where salary>=21000 or name like '%p';
+select name from mphasis183 where salary>=21000 and name like '_a%';
+select name from mphasis183 where salary>=21000 and name like '__n%';
+
+=>select name from student where name like '_i%';
+
+=>select name from student where name like '__r%';					     
+ =>select * from emp where sal>=1500 and sal<=2500;
+					     
+ =>select * from emp where sal between 1500 and 2500;
+
+=>select empname,empcode,dob from employee1 where phoneno is null;
+
+=>select * from student where salary is null;
 -----------------------------------------------------------------
 syntax for creating table 
 -------------------------------------
@@ -109,6 +147,21 @@ constraints
 4)check :- we can limit a value to a column. (example salary should be greater than 15000.)
 
 5)foreign key :- you can link a table column with another table column which is having primary key.
+------------------------------------------------------------
+create table mphasis183
+(empno number primary key,
+name varchar2(30) not null,
+address varchar2(30) unique,
+salary number check (salary > 18000));
+
+insert into mphasis183 values(103,'prasanna','pune',28500);
+drop table mphasis183;
+delete mphasis183 where empno=101;
+select * from mphasis183;
+create table transaction(empno number references mphasis183,department varchar2(30),loc varchar2(30));
+select * from transaction;
+insert into transaction values(104,'sales','pune');
+
 
 ----------------------------------------------------------------------------------------------
 Join is used to join 2 or more tables 
@@ -124,13 +177,28 @@ b is the allias name for empdetails;
 --------------------------------------------------------------------------------------
 composite key :- it is used to make more than one column as primary key.
 
-create table mphasisstud 
+create table mphasisstud1 
 (empid number not null,
 name varchar2(20) not null,
 address varchar2(20),
 primary key(empid,name),
 unique (empid,address));
 
+-------------------------------------------
+CREATE TABLE accounts (
+   acc_num INTEGER,
+   acc_type INTEGER,
+   acc_descr CHAR(20),
+   PRIMARY KEY (acc_num, acc_type));
+---------------------------------------------------------------------------------------
+CREATE TABLE sub_accounts (
+   sub_acc INTEGER PRIMARY KEY,
+   ref_num INTEGER NOT NULL,
+   ref_type INTEGER NOT NULL,
+   sub_descr CHAR(20),
+   FOREIGN KEY (ref_num, ref_type) REFERENCES accounts
+      (acc_num, acc_type));
+---------------------------------------------------------------------------------------------
 
 insert into mphasisstud values(102,'sandip','hyd');
 select * from mphasisstud;
@@ -145,6 +213,24 @@ Date Function
 ------------------------
 it is stored as a number in the database and it can be added or subtracted from a date the numbers.
 
+select sysdate from dual;
+select * from dual;
+select months_between('28-mar-2019','28-feb-2019') from dual;
+select last_day(sysdate)from dual;
+select last_day('02-feb-2021')from dual;
+select to_char(sysdate,'DD Month yyyy HH:MI:SS AM AD') from dual;
+select to_char(sysdate,'DD Month yyyy HH:MM') from dual;
+select to_char(sysdate,'DD Mon yy HH:MM') from dual;
+select to_char(sysdate,'DD Mon yy') from dual;
+select to_char(sysdate,'Day') from dual;
+select to_char(sysdate,'Month') from dual;
+select to_char(sysdate,'year') from dual;
+select to_char(sysdate,'yyyy') from dual;
+SELECT NEXT_DAY(SYSDATE, 'SUN') FROM DUAL;
+select sysdate+1 from dual;
+select sysdate-2 from dual;
+select sysdate+2 from dual;
+select empno,design,dept,to_char(DOB,'DD Day Month yyyy HH:MI') as FullDOB from mphasisdept;
 -------------------------------
 sql functions 
 -------------------
@@ -164,8 +250,33 @@ select dept from mphasisemp group by dept having min(salary)>=23000;
 
 
 ------------------------------------------------------------------------------------------------------------
-https://github.com/sandipmohapatra/MPHASIS183
+group by function
+----------------------
+select * from mphasis183;
 
+alter table mphasis183 add dept varchar2(30);
+
+select * from mphasis183;
+
+insert into mphasis183(empno,name,address,salary) values(105,'sunil','bang',24000);
+
+update mphasis183 set dept='dev' where empno in(104,105);
+
+aggregate funtion
+--------------------
+SELECT COUNT(empno),dept FROM mphasis183 GROUP BY dept;
+SELECT sum(salary),dept FROM mphasis183 GROUP BY dept;
+SELECT avg(salary),dept FROM mphasis183 GROUP BY dept;
+SELECT round(avg(salary),2),dept FROM mphasis183 GROUP BY dept;
+SELECT max(salary),dept FROM mphasis183 GROUP BY dept;
+SELECT min(salary),dept FROM mphasis183 GROUP BY dept;
+
+we will use having clause in place of where clause 
+----------------------------------------------------------- 
+select dept from mphasis183 group by dept having min(salary) >= 23000;
+
+select dept from mphasis183 group by dept having max(salary) >= 23000;
+------------------------------------------------------------------------------
 -------------------------------------------------------------------
 Assignment-1
 --------------------------
@@ -657,8 +768,21 @@ ORDER BY A.City;
 
 ------------------------------------
 
+What is ACID property in a database?
+ACID property is used to ensure that the data transactions are processed reliably in a database system.
 
+A single logical operation of a data is called transaction.
 
+ACID is an acronym for Atomicity, Consistency, Isolation, Durability.
+
+Atomicity: it requires that each transaction is all or nothing. It means if one part of the transaction fails, the entire transaction fails and the database state is left unchanged.
+
+Consistency: the consistency property ensure that the data must meet all validation rules. In simple words you can say that your transaction never leaves your database without completing its state.
+
+Isolation: this property ensure that the concurrent property of execution should not be met. The main goal of providing isolation is concurrency control.
+
+Durability: durability simply means that once a transaction has been committed, it will remain so, come what may even power loss, crashes or errors.
+----------------------------------------------------------------
 
 
 
