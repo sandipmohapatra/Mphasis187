@@ -1,0 +1,50 @@
+Example-1
+---------------------
+package org.lambda;
+interface bank1 
+{
+	public void withdraw();//abstract method
+}
+
+class bank2
+{
+	public static void main(String[] args) 
+	{
+		int x=10;
+		bank1 ob=new bank1()  //functional Interface
+		{
+			@Override
+			public void withdraw() 
+			{
+				System.out.println("this is override method");
+				System.out.println("the value of x is "+x);
+			}
+		};
+		ob.withdraw();
+	}
+
+}
+-----------------------------------------------------------------------------------
+example-2
+----------------------
+package org.lambda;
+
+@FunctionalInterface
+interface bank 
+{
+	public void withdraw();
+}
+
+class InterfaceExample
+{
+	public static void main(String[] args) 
+	{
+		int x=10;
+				bank ob=()->
+		{//no need to override method
+				System.out.println("this is override method");
+				System.out.println("the value of x is "+x);
+				};
+		ob.withdraw();
+	}}
+----------------------------------------------------------------
