@@ -21,3 +21,44 @@ END;
 SELECT * FROM MPHASISEMP;
 
 insert into mphasisemp values(105,'SUNIL','sunil@gmail.com',45000,20,5);
+
+-----------------------------------------------------
+CREATE OR REPLACE TRIGGER t11
+BEFORE INSERT OR UPDATE OR DELETE ON mphasisemp 
+BEGIN
+IF(TO_CHAR(SYSDATE,'DY')IN('SAT','SUN')) OR 
+(TO_CHAR(SYSDATE,'HH24:MI') NOT BETWEEN '08' AND '15')
+THEN
+IF DELETING THEN
+RAISE_APPLICATION_ERROR(-20502,'You may delete from employees table only during business hours');
+ELSIF INSERTING THEN
+RAISE_APPLICATION_ERROR(-20500,'You may insert into employees table only during business hours');
+ELSIF UPDATING ('salary') THEN
+RAISE_APPLICATION_ERROR(-20503,'You may update into employees table only during business hours');
+ELSE
+RAISE_APPLICATION_ERROR(-20504,'You may update into employees table only during normal hours');
+END IF;
+END IF;
+END;
+------------------------------------------------------------------
+CREATE OR REPLACE TRIGGER display_salary_change  
+AFTER INSERT OR UPDATE ON mphasisemp  
+FOR EACH ROW  
+WHEN (NEW.empID > 0)  
+DECLARE  
+   sal_diff number;  
+BEGIN  
+   sal_diff := :NEW.salary  - :OLD.salary;  
+   dbms_output.put_line('Old salary: ' || :OLD.salary);  
+   dbms_output.put_line('New salary: ' || :NEW.salary);  
+   dbms_output.put_line('Salary difference: ' || sal_diff);  
+END;
+
+drop trigger t11;
+
+select * from mphasisemp;
+
+drop trigger DISPLAY_SALARY_CHANGE
+
+update mphasisemp set salary=65000 where name='Nitish';
+----------------------------------------------------------------------------------------
