@@ -1,0 +1,23 @@
+1)web.xml
+2)<welcome-file>index.html(endPoint is index)
+3)controller("/index")
+4)sdnext-servlet.xml
+5)index.jsp
+6)employee.html,add.html (endPoints)
+7)employee ----->sdnext-servlet.xml------>employeesList
+8)add----->sdnext-servlet.xml-------->addEmployee
+9)employeeList.jsp to show the list of employees(add.html)
+10)addEmployee.jsp to save the data (save.html) and save (endpoint ) will reditect to again to addEmployee.jsp
+11)edit.html, delete.html (endPoints)
+12)This will edit or delete and display the addEmployee.jsp which has save.html
+--------------------------------------------------------------------------------------------------------------------
+This is the spring and hibernate combination
+for hibernate :- EmployeeBrean,EmployeeDao(Interface),EmployeeDaoImpl(Hibernate sessions),Employee(creating table)
+for spring :- EmployeeService(Interface),EmployeeServiceImpl(calls the EmployeeDaoImpl)
+we use the service methods in the spring controller.
+
+-------------------------------------------------------
+
+hibernate.show_sql=true <----------This display the query
+hibernate.hbm2ddl.auto=update <-----create,insert and next time onwards it will only update the table
+hibernate.hbm2ddl.auto=create  <--------create,insert and always create new table by dropping the previous table.
