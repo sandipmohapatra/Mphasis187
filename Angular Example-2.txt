@@ -1,0 +1,80 @@
+Example-2
+**C:\Users\sandip\Desktop\amazon\src\app>ng g c login --skipTests
+-------------------------------------------------------------------------------------------------
+1.Create a new Folder into “app” folder by name “login”
+2.Add following files
+- login.component.ts
+- login.component.html
+- login.component.css
+-----------------------------------------------------------------------------
+3.login.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'app-login',
+    templateUrl: 'login.component.html',
+    styleUrls: ['login.component.css']
+})
+
+export class LoginComponent {
+    public title = 'User Login';
+}
+-------------------------------------------------------------------
+4.login.component.html
+<div class="form-login">
+    <h2>{{title}}</h2>
+    <dl>
+        <dt>User Name</dt>
+        <dd>
+            <input type="text">
+        </dd>
+        <dt>Password</dt>
+        <dd>
+            <input type="password">
+        </dd>
+    </dl>
+    <button>Login</button>
+</div>
+---------------------------------------------------------------------
+5.login.component.css
+.form-login {
+    width: 300px;
+    margin:auto;
+    align-items: center;
+    justify-content: center;
+    border:2px solid darkcyan;
+    box-shadow: 2px 2px 3px darkcyan;
+    border-radius: 10px;
+}
+button {
+    background-color: darkcyan;
+    color:white;
+}
+-------------------------------------------------------------------------
+6.index.html
+<body>
+<app-login> </app-login>
+</body>
+---------------------------------------------------------------------------
+7.app.module.ts
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home.component';
+import { LoginComponent } from './login/login.component';
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LoginComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [LoginComponent]
+})
+
+export class AppModule { }
+------------------------------------------------------------------------------
