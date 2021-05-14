@@ -1,0 +1,44 @@
+if-demo.component.ts
+--------------------------------------
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-ifdemo',
+  templateUrl: 'if-demo.component.html'
+})
+export class IfdemoComponent {
+   public product = {
+     Name: 'Nike Casuals',
+     Price: 4500.55,
+     Photo: 'assets/shoe.jpg'
+   };
+   public showImage = false;
+   public btnText = 'Show';
+   public TogglePreview() {
+      this.showImage = (this.showImage==false)?true:false;
+      this.btnText = (this.btnText=='Show')?'Hide':'Show';
+   }
+}
+----------------------------------------------------------------------------
+if-demo.component.html
+----------------------------------------
+<div class="container-fluid">
+    <h2>Product Details</h2>
+    <div class="row">
+      <div class="col-3">
+          <dl>
+              <dt>Name</dt>
+              <dd>{{product.Name}}</dd>
+              <dt>Price</dt>
+              <dd>{{product.Price}}</dd>
+          </dl>
+          <button (click)="TogglePreview()" class="btn btn-primary btn-sm btn-block">{{btnText}} Preview</button>
+      </div>
+      <div class="col-9">
+        <div *ngIf="showImage">
+            <img [src]="product.Photo" height="200" width="200" >
+        </div>
+      </div>
+    </div>
+    </div>
+----------------------------------------------------------------------
